@@ -1,5 +1,4 @@
 import { APP_LOGO } from "@/const";
-import { Button } from "@/components/ui/button";
 
 export default function Navigation() {
   const scrollToSection = (id: string) => {
@@ -42,14 +41,7 @@ export default function Navigation() {
             </button>
           </div>
 
-          <div>
-            <Button 
-              onClick={() => scrollToSection("contact")}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
-            >
-              Get Started
-            </Button>
-          </div>
+
         </div>
       </div>
     </nav>

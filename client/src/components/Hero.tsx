@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="container">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight px-4 py-2.5 max-w-5xl mx-auto">
-            AI Integration Strategy for Data Visualization, Chatbots, & Voice AI.
+            AI Integration Strategies for Power BI Data Visualization, AI Chatbots, and Voice AI.
           </h1>
         </div>
       </div>

@@ -7,7 +7,7 @@ export default function Hero() {
       
       <div className="container">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight" style={{fontSize: '65px', width: '1011px', height: '162px', fontWeight: '600'}}>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight" style={{fontSize: '55px', width: '871px', height: '160px', fontWeight: '600', paddingTop: '10px', paddingBottom: '10px'}}>
             AI Integration Strategy for Data Visualization, Chatbots, & Voice AI.
           </h1>
         </div>

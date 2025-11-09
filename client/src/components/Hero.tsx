@@ -1,15 +1,14 @@
 export default function Hero() {
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden" style={{paddingTop: '120px', paddingBottom: '40px'}}>
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden" style={{paddingTop: '150px', paddingBottom: '80px'}}>
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 -z-10" />
       
       <div className="container">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
-            Transform Your Business with{" "}
-            <span className="text-primary">AI-Powered Solutions</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight" style={{fontSize: '65px', width: '1011px', height: '162px', fontWeight: '600'}}>
+            AI Integration Strategy for Data Visualization, Chatbots, & Voice AI.
           </h1>
         </div>
       </div>

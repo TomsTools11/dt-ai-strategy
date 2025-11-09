@@ -155,7 +155,7 @@ export default function VoiceAISection() {
   ];
 
   return (
-    <section id="voice-ai" className="py-20 md:py-32 bg-background">
+    <section id="voice-ai" className="py-20 md:py-32 bg-background" style={{paddingTop: '80px', paddingBottom: '80px'}}>
       <div className="container">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">

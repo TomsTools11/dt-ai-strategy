@@ -103,7 +103,7 @@ export default function ChatbotsSection() {
   ];
 
   return (
-    <section id="chatbots" className="py-20 md:py-32 bg-muted/30">
+    <section id="chatbots" className="py-20 md:py-32 bg-muted/30" style={{paddingTop: '80px', paddingBottom: '80px'}}>
       <div className="container">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">

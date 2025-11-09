@@ -1,7 +1,7 @@
 export default function Hero() {
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden" style={{paddingTop: '120px', paddingBottom: '40px'}}>
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 -z-10" />
       

@@ -78,7 +78,7 @@ export default function PowerBISection() {
   ];
 
   return (
-    <section id="power-bi" className="py-20 md:py-32 bg-background">
+    <section id="power-bi" className="py-20 md:py-32 bg-background" style={{paddingTop: '105px'}}>
       <div className="container">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16">

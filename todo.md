@@ -59,3 +59,6 @@
 
 ## Responsive Design Updates
 - [x] Make hero title responsive for all screen sizes including mobile
+
+## Logo Update
+- [x] Replace logo with transparent PNG version

@@ -62,3 +62,6 @@
 
 ## Logo Update
 - [x] Replace logo with transparent PNG version
+
+## Logo Fix
+- [x] Replace logo with SVG version with black text

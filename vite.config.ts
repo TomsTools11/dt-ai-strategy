@@ -1,12 +1,23 @@
 import { jsxLocPlugin } from "@builder.io/vite-plugin-jsx-loc";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
-import fs from "node:fs";
 import path from "path";
 import { defineConfig } from "vite";
-import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime()];
+// Conditionally load Manus plugin only in Manus environment
+const isManusEnvironment = process.env.MANUS_RUNTIME === "true";
+
+const plugins = [react(), tailwindcss(), jsxLocPlugin()];
+
+// Only add Manus runtime plugin in Manus environment
+if (isManusEnvironment) {
+  try {
+    const { vitePluginManusRuntime } = await import("vite-plugin-manus-runtime");
+    plugins.push(vitePluginManusRuntime());
+  } catch {
+    // Plugin not available, skip it
+  }
+}
 
 export default defineConfig({
   plugins,

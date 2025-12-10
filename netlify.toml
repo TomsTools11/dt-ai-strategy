@@ -2,15 +2,16 @@
 
 [build]
   # Build command for the React frontend
-  command = "pnpm install && pnpm run build:netlify"
+  # Enable corepack for pnpm support, then install and build
+  command = "corepack enable && corepack prepare pnpm@10.4.1 --activate && pnpm install --frozen-lockfile && pnpm run build:netlify"
   # Output directory where Vite builds the static files
   publish = "dist/public"
 
 [build.environment]
-  # Node.js version
+  # Node.js version (20+ required for import.meta.dirname support)
   NODE_VERSION = "20"
-  # pnpm version
-  PNPM_VERSION = "10.4.1"
+  # Enable corepack for pnpm
+  COREPACK_ENABLE_STRICT = "0"
 
 # SPA routing - redirect all routes to index.html for client-side routing
 [[redirects]]

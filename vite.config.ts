@@ -1,26 +1,41 @@
 import { jsxLocPlugin } from "@builder.io/vite-plugin-jsx-loc";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
-import fs from "node:fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
-import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime()];
+// Get directory name (compatible with ESM)
+const __dirname = import.meta.dirname ?? path.dirname(fileURLToPath(import.meta.url));
+
+// Conditionally load Manus plugin only in Manus environment
+const isManusEnvironment = process.env.MANUS_RUNTIME === "true";
+
+const plugins = [react(), tailwindcss(), jsxLocPlugin()];
+
+// Only add Manus runtime plugin in Manus environment
+if (isManusEnvironment) {
+  try {
+    const { vitePluginManusRuntime } = await import("vite-plugin-manus-runtime");
+    plugins.push(vitePluginManusRuntime());
+  } catch {
+    // Plugin not available, skip it
+  }
+}
 
 export default defineConfig({
   plugins,
   resolve: {
     alias: {
-      "@": path.resolve(import.meta.dirname, "client", "src"),
-      "@shared": path.resolve(import.meta.dirname, "shared"),
-      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+      "@": path.resolve(__dirname, "client", "src"),
+      "@shared": path.resolve(__dirname, "shared"),
+      "@assets": path.resolve(__dirname, "attached_assets"),
     },
   },
-  envDir: path.resolve(import.meta.dirname),
-  root: path.resolve(import.meta.dirname, "client"),
+  envDir: path.resolve(__dirname),
+  root: path.resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
   },
   server: {
